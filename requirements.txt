@@ -1,0 +1,4 @@
+# Selenium
+selenium==3.14.0
+# WebDriver
+webdriver-manager==2.3.0
