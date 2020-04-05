@@ -1,6 +1,6 @@
 def test_substring(full_string, substring):
     if str(substring) not in str(full_string):
-        print(f'expected {full_string} to be substring of {substring}')
+        print(f'expected \'{substring}\' to be substring of \'{full_string}\'')
 
 
 if __name__ == '__main__':
