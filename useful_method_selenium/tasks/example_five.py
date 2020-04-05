@@ -5,7 +5,7 @@ import os
 
 line = 'http://suninjuly.github.io/file_input.html'
 path = os.path.abspath(os.path.dirname(__name__))
-path_file = os.path.join(path, 'exemple_five_text.txt')
+path_file = os.path.join(path, 'example_five_text.txt')
 
 try:
     browser = webdriver.Chrome()
