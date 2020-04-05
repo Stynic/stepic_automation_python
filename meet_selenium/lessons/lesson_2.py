@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 import time
 
-line = 'http://suninjuly.github.io/registration2.html'
+line = 'http://suninjuly.github.io/registration1.html'
 
 try:
     browser = webdriver.Chrome()
