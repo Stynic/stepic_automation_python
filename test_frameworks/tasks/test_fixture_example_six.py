@@ -6,14 +6,6 @@ import math
 import pytest
 
 
-@pytest.fixture(scope="function")
-def browser():
-    browser = webdriver.Chrome()
-    yield browser
-    browser.quit()
-
-
-
 list_line = [
     'https://stepik.org/lesson/236895/step/1',
     'https://stepik.org/lesson/236896/step/1',
@@ -27,15 +19,15 @@ list_line = [
 
 
 @pytest.mark.parametrize("line", list_line)
-def test_fixture_line(browser, line):
+def test_fixture_line(driver, line):
     try:
         answer = str(math.log(int(time.time())))
-        browser.get(line)
-        browser.implicitly_wait(5)
-        fill_answer = browser.find_element(By.CSS_SELECTOR, '.textarea')
+        driver.get(line)
+        driver.implicitly_wait(5)
+        fill_answer = driver.find_element(By.CSS_SELECTOR, '.textarea')
         fill_answer.send_keys(answer)
-        browser.find_element(By.CSS_SELECTOR, '.submit-submission').click()
-        result = browser.find_element(By.CSS_SELECTOR, '.smart-hints__hint').text
+        driver.find_element(By.CSS_SELECTOR, '.submit-submission').click()
+        result = driver.find_element(By.CSS_SELECTOR, '.smart-hints__hint').text
         print(result)
     finally:
         time.sleep(2)
